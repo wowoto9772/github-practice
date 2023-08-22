@@ -55,3 +55,42 @@ git diff
 ```
 
 And nothing changed.
+
+# Remove latest commit
+
+Create 1 file and do commit, now.
+
+```bash
+touch empty.log
+git add empty.log
+git commit -m "Add empty.log to 3_reset"
+```
+
+And, you can know commited logs.
+
+```bash
+git log
+
+# (and quit with q)
+```
+
+And, now you can delete your latest 1 commit.  
+The commit' message is "Add empty.log ...".
+
+```bash
+git reset --soft HEAD~1
+```
+
+And, you can know the staged before you commit.
+
+```bash
+git status
+```
+
+And, make empty.log unstaged.
+
+```bash
+git reset HEAD empty.log
+```
+
+And, empty.log is just untracked.
