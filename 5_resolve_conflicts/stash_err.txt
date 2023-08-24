@@ -1,2 +1,3 @@
 This is the example with using git stash.
 This item maybe problematic for during stash pop.
+New line is added.
