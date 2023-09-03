@@ -92,3 +92,41 @@ Add third scenario for squash
 ```
 
 And, this "s" means squash.
+
+# Change the orders of commits.
+
+Please make another branch for this scenario.
+
+```bash
+git checkout -b 7-rebase-interactive-change-order
+```
+
+And, you can add 3 commits like below.
+
+```bash
+echo "1" >> change_order.txt
+git add change_order.txt
+git commit -m "Add first scenario for change order"
+
+echo "2" >> change_order-2nd.txt
+git add change_order-2nd.txt
+git commit -m "Add second scenario for change order"
+
+echo "3" >> change_order-3rd.txt
+git add change_order-3rd.txt
+git commit -m "Add third scenario for change order"
+```
+
+And, you can change orders of commits.
+
+```bash
+git rebase -i HEAD~3
+```
+
+If you change the commit like below, then order is changed.
+
+```
+pick fa053a0 Add first scenario for change order
+pick a2db145 Add third scenario for change order
+pick 957cc14 Add second scenario for change order
+```
